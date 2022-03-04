@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 
-// const { v4: uuidv4 } = require('uuid');
+// import { v4: uuidv4 } from 'uuid';
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(express.json());
 
 // const users = [];
 
-function checksExistsUserAccount(request, response, next) {
+function checksExistsUserAccount() {
   // Complete aqui
 }
 
@@ -18,8 +18,8 @@ app.post('/users', (request, response) => {
   // Complete aqui
 });
 
-app.get('/todos', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+app.get('/todos', (request, response) => {
+  response.send({ success: 'Hello World!' })
 });
 
 app.post('/todos', checksExistsUserAccount, (request, response) => {
@@ -38,4 +38,4 @@ app.delete('/todos/:id', checksExistsUserAccount, (request, response) => {
   // Complete aqui
 });
 
-module.exports = app;
+export default app;
